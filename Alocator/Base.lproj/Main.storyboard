@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -16,64 +17,110 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <userGuides>
-                            <userLayoutGuide location="81" affinity="minY"/>
-                            <userLayoutGuide location="269" affinity="minY"/>
-                            <userLayoutGuide location="300" affinity="minY"/>
-                            <userLayoutGuide location="300" affinity="minY"/>
-                            <userLayoutGuide location="300" affinity="minY"/>
-                        </userGuides>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggd-PI-4FU">
-                                <rect key="frame" x="198" y="125" width="204" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggd-PI-4FU">
+                                <rect key="frame" x="175" y="112" width="250" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="ctt-aj-w60"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" red="1" green="0.51965510266747184" blue="0.21938912374487651" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="108" y="112" width="185.5" height="45"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Fn-2c-Qet"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="% Alcohol Content per Beer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgr-9K-OxF">
-                                <rect key="frame" x="14" y="28" width="573" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="% Alcohol Content per Beer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgr-9K-OxF">
+                                <rect key="frame" x="0.0" y="28" width="584" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="KCM-mR-jtH"/>
+                                    <constraint firstAttribute="width" constant="600" id="bQ1-Qk-oS8"/>
+                                    <constraint firstAttribute="width" secondItem="Hgr-9K-OxF" secondAttribute="height" multiplier="600:17" id="oix-vn-1vx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KCM-mR-jtH"/>
+                                        <exclude reference="bQ1-Qk-oS8"/>
+                                        <exclude reference="oix-vn-1vx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="lic-0C-85j"/>
+                                </connections>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="gqO-c4-2rq">
-                                <rect key="frame" x="241" y="66" width="118" height="31"/>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-ax-YZU">
-                                <rect key="frame" x="279" y="188" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-ax-YZU">
+                                <rect key="frame" x="175" y="190" width="250" height="25"/>
                                 <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="107" y="186" width="185.5" height="25"/>
+                                </variation>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="gqO-c4-2rq">
+                                <rect key="frame" x="17" y="53" width="566" height="31"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="294" y="53" width="4" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="YP2-ht-lH9"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="width" secondItem="Ggd-PI-4FU" secondAttribute="width" id="0gJ-wh-zng"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hgr-9K-OxF" secondAttribute="trailing" constant="-3" id="5iH-j5-ut8"/>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-2" id="9uV-Hg-1es"/>
-                            <constraint firstItem="gqO-c4-2rq" firstAttribute="centerX" secondItem="Ggd-PI-4FU" secondAttribute="centerX" id="CWJ-LY-4Zp"/>
-                            <constraint firstItem="Zqs-ax-YZU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="263" id="DV1-cJ-ceb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zqs-ax-YZU" secondAttribute="trailing" constant="263" id="LmP-X4-291"/>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Oc1-BP-cNr"/>
-                            <constraint firstItem="gqO-c4-2rq" firstAttribute="top" secondItem="Hgr-9K-OxF" secondAttribute="bottom" constant="8" id="Rqs-FA-4Qg"/>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="X7p-lJ-nrX"/>
-                            <constraint firstItem="Zqs-ax-YZU" firstAttribute="top" secondItem="Ggd-PI-4FU" secondAttribute="bottom" constant="33" id="Yd2-Jp-k5s"/>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="avt-dt-AUf"/>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="width" secondItem="Ggd-PI-4FU" secondAttribute="width" id="f7H-89-pux"/>
-                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="centerX" secondItem="gqO-c4-2rq" secondAttribute="centerX" constant="0.5" id="geM-wB-rwb"/>
-                            <constraint firstItem="Ggd-PI-4FU" firstAttribute="top" secondItem="gqO-c4-2rq" secondAttribute="bottom" constant="29" id="hxK-Qe-Ug9"/>
-                            <constraint firstItem="gqO-c4-2rq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-486" id="iPY-zX-Ong"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hgr-9K-OxF" secondAttribute="trailing" constant="-3" id="sqv-qQ-64h"/>
+                            <constraint firstItem="gqO-c4-2rq" firstAttribute="centerX" secondItem="Hgr-9K-OxF" secondAttribute="centerX" constant="-2" id="05Y-tF-4zP"/>
+                            <constraint firstAttribute="centerX" secondItem="Ggd-PI-4FU" secondAttribute="centerX" id="1Ow-9v-mej"/>
+                            <constraint firstAttribute="centerX" secondItem="Hgr-9K-OxF" secondAttribute="centerX" constant="-16" id="2LQ-C9-yOt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gqO-c4-2rq" secondAttribute="trailing" constant="3" id="2uF-3w-5LX"/>
+                            <constraint firstItem="Ggd-PI-4FU" firstAttribute="top" secondItem="gqO-c4-2rq" secondAttribute="bottom" constant="29" id="7Nj-qJ-rBy"/>
+                            <constraint firstItem="Zqs-ax-YZU" firstAttribute="width" secondItem="Ggd-PI-4FU" secondAttribute="width" id="E9C-tq-pJh"/>
+                            <constraint firstAttribute="centerX" secondItem="gqO-c4-2rq" secondAttribute="centerX" id="Lug-xf-3bm"/>
+                            <constraint firstItem="gqO-c4-2rq" firstAttribute="top" secondItem="Hgr-9K-OxF" secondAttribute="bottom" constant="8" id="PRd-yw-h8S"/>
+                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="SdL-DR-6bc"/>
+                            <constraint firstAttribute="centerX" secondItem="Hgr-9K-OxF" secondAttribute="centerX" constant="-0.5" id="TlF-xS-ZA6"/>
+                            <constraint firstItem="gqO-c4-2rq" firstAttribute="leading" secondItem="Hgr-9K-OxF" secondAttribute="leading" constant="19" id="UUw-4z-zWI"/>
+                            <constraint firstItem="Zqs-ax-YZU" firstAttribute="top" secondItem="Ggd-PI-4FU" secondAttribute="bottom" constant="33" id="Yd2-Jp-k5s">
+                                <variation key="widthClass=compact" constant="29"/>
+                            </constraint>
+                            <constraint firstItem="gqO-c4-2rq" firstAttribute="width" secondItem="Hgr-9K-OxF" secondAttribute="width" constant="-22" id="d5u-s9-c1J"/>
+                            <constraint firstAttribute="centerX" secondItem="Zqs-ax-YZU" secondAttribute="centerX" id="gb0-5f-8kh"/>
+                            <constraint firstItem="gqO-c4-2rq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="lES-q8-RWp"/>
+                            <constraint firstItem="gqO-c4-2rq" firstAttribute="height" secondItem="Hgr-9K-OxF" secondAttribute="height" constant="13" id="qiQ-jc-VVW"/>
+                            <constraint firstAttribute="height" secondItem="Hgr-9K-OxF" secondAttribute="height" constant="583" id="tGH-kY-HiQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2LQ-C9-yOt"/>
+                                <exclude reference="TlF-xS-ZA6"/>
+                                <exclude reference="05Y-tF-4zP"/>
+                                <exclude reference="Lug-xf-3bm"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="yvC-Gn-u6Z" appends="YES" id="1iU-7o-G2T"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="beerCountSlider" destination="gqO-c4-2rq" id="u2i-xy-5aI"/>
+                        <outlet property="beerPercentTextField" destination="Hgr-9K-OxF" id="vwB-98-Uuu"/>
+                        <outlet property="resultLabel" destination="Zqs-ax-YZU" id="9xj-xd-wCX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="yvC-Gn-u6Z"/>
+                <tapGestureRecognizer id="yvC-Gn-u6Z">
+                    <connections>
+                        <action selector="tapGestureDidFire:" destination="BYZ-38-t0r" id="tbD-ln-j5h"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
