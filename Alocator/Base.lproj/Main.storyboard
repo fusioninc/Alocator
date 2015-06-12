@@ -50,6 +50,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="width" secondItem="Ggd-PI-4FU" secondAttribute="width" id="0gJ-wh-zng"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hgr-9K-OxF" secondAttribute="trailing" constant="-3" id="5iH-j5-ut8"/>
                             <constraint firstItem="Hgr-9K-OxF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-2" id="9uV-Hg-1es"/>
                             <constraint firstItem="gqO-c4-2rq" firstAttribute="centerX" secondItem="Ggd-PI-4FU" secondAttribute="centerX" id="CWJ-LY-4Zp"/>
@@ -60,6 +61,7 @@
                             <constraint firstItem="Hgr-9K-OxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="X7p-lJ-nrX"/>
                             <constraint firstItem="Zqs-ax-YZU" firstAttribute="top" secondItem="Ggd-PI-4FU" secondAttribute="bottom" constant="33" id="Yd2-Jp-k5s"/>
                             <constraint firstItem="Hgr-9K-OxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="avt-dt-AUf"/>
+                            <constraint firstItem="Hgr-9K-OxF" firstAttribute="width" secondItem="Ggd-PI-4FU" secondAttribute="width" id="f7H-89-pux"/>
                             <constraint firstItem="Hgr-9K-OxF" firstAttribute="centerX" secondItem="gqO-c4-2rq" secondAttribute="centerX" constant="0.5" id="geM-wB-rwb"/>
                             <constraint firstItem="Ggd-PI-4FU" firstAttribute="top" secondItem="gqO-c4-2rq" secondAttribute="bottom" constant="29" id="hxK-Qe-Ug9"/>
                             <constraint firstItem="gqO-c4-2rq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-486" id="iPY-zX-Ong"/>
