@@ -10,9 +10,6 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *beerPercentTextField;
-@property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 @end
 
@@ -20,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Alcolator";
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -39,6 +39,11 @@
 
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
+    //Wine (2 glasses)
+    int numberOfBeers = self.beerCountSlider.value;
+    float numberOfWineGlassesForEquivalentAlcoholAmount = [self calculateGlassesOfWine:numberOfBeers alcoholByVolume:[self.beerPercentTextField.text floatValue]];
+    NSString *titleString = [NSString stringWithFormat:@"Wine (%.1f glasses)",numberOfWineGlassesForEquivalentAlcoholAmount];
+    self.title = titleString;
     [self.beerPercentTextField resignFirstResponder];
 }
 
@@ -46,18 +51,10 @@
     [self.beerPercentTextField resignFirstResponder];
     //first, calculate how much alcohol is in all those beer...
     int numberOfBeers = self.beerCountSlider.value;
-    int ouncesInOneBeerGlass = 12; //assume 12 oz. bottle
-    float alcoholPercentageOfBeer = [self.beerPercentTextField.text floatValue] / 100;
-    float ouncesOfAlcoholPerBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
-    float ouncesOfAlcoholTotal = ouncesOfAlcoholPerBeer * numberOfBeers;
-    // now, calculate the equivalent amount of wine...
-    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
-    float alcoholPercentageOfWine = 0.13;  // 13% is average
-    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberOfWineGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    float numberOfWineGlassesForEquivalentAlcoholAmount = [self calculateGlassesOfWine:numberOfBeers alcoholByVolume:[self.beerPercentTextField.text floatValue]];
     // decide whether to use "beer"/"beers" and "glass"/"glasses"
     NSString *beerText;
-    if (numberOfBeers == 1) {
+    if (self.beerCountSlider.value == 1) {
         beerText = NSLocalizedString(@"beer", @"singular beer");
     } else {
         beerText = NSLocalizedString(@"beers", @"plural of beer");
@@ -74,6 +71,21 @@
 }
 - (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
     [self.beerPercentTextField resignFirstResponder];
+}
+
+- (float)calculateGlassesOfWine:(int) numberOfBeers alcoholByVolume:(float) alcoholByVolume {
+    
+    int ouncesInOneBeerGlass = 12; //assume 12 oz. bottle
+    float alcoholPercentageOfBeer = alcoholByVolume / 100;
+    float ouncesOfAlcoholPerBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
+    float ouncesOfAlcoholTotal = ouncesOfAlcoholPerBeer * numberOfBeers;
+    // now, calculate the equivalent amount of wine...
+    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
+    float alcoholPercentageOfWine = 0.13;  // 13% is average
+    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    float numberOfWineGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    
+    return numberOfWineGlassesForEquivalentAlcoholAmount;
 }
 
 @end
