@@ -11,7 +11,9 @@
 @interface WhiskeyViewController : ViewController
 
 @property (weak, nonatomic) IBOutlet UISlider *whiskeyCountSlider;
-- (float)calculateGlassesOfWhiskey:(int)numberOfBeers alcoholByVolume:(float)alcoholByVolume;
+@property (weak, nonatomic) IBOutlet UITextField *whiskeyPercentTextField;
+
+- (float)calculateGlassesOfWhiskey:(int) numberOfBeers alcoholByVolume:(float) alcoholByVolume;
 
 @end
 

@@ -83,9 +83,9 @@
     float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
     float alcoholPercentageOfWine = 0.13;  // 13% is average
     float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberOfWineGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    float numberOfWhiskeyGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
     
-    return numberOfWineGlassesForEquivalentAlcoholAmount;
+    return numberOfWhiskeyGlassesForEquivalentAlcoholAmount;
 }
 
 @end

@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
 
--(void)buttonPressed:(UIButton *)sender;
+- (void)buttonPressed:(UIButton *)sender;
 - (float)calculateGlassesOfWine:(int) numberOfBeers alcoholByVolume:(float) alcoholByVolume;
 
 @end
