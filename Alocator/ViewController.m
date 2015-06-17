@@ -76,6 +76,7 @@
 - (float)calculateGlassesOfWine:(int) numberOfBeers alcoholByVolume:(float) alcoholByVolume {
     
     int ouncesInOneBeerGlass = 12; //assume 12 oz. bottle
+        
     float alcoholPercentageOfBeer = alcoholByVolume / 100;
     float ouncesOfAlcoholPerBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
     float ouncesOfAlcoholTotal = ouncesOfAlcoholPerBeer * numberOfBeers;

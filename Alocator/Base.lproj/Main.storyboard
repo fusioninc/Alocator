@@ -218,6 +218,7 @@
                         <outlet property="beerCountSlider" destination="4hF-af-4bU" id="9Id-bW-PyV"/>
                         <outlet property="beerPercentTextField" destination="6s1-2F-CeO" id="3Ad-ho-akA"/>
                         <outlet property="resultLabel" destination="CBE-de-Qq4" id="McY-CE-h4s"/>
+                        <outlet property="whiskeyPercentTextField" destination="6s1-2F-CeO" id="mbN-LT-YiW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWm-AG-a85" userLabel="First Responder" sceneMemberID="firstResponder"/>
