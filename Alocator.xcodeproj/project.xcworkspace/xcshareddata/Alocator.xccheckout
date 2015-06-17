@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B18934B1-9AEA-4E9E-AAD3-7BF66B0C4727</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Alocator</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BF81CD4AB495B80F745A2E3F33B77FC1F81F6990</key>
 		<string>github.com:fusioninc/Alocator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Alocator.xcodeproj</string>
+	<string>Alocator.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BF81CD4AB495B80F745A2E3F33B77FC1F81F6990</key>

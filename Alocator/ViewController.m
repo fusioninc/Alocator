@@ -76,6 +76,7 @@
 - (float)calculateGlassesOfWine:(int) numberOfBeers alcoholByVolume:(float) alcoholByVolume {
     
     int ouncesInOneBeerGlass = 12; //assume 12 oz. bottle
+        
     float alcoholPercentageOfBeer = alcoholByVolume / 100;
     float ouncesOfAlcoholPerBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
     float ouncesOfAlcoholTotal = ouncesOfAlcoholPerBeer * numberOfBeers;
@@ -83,9 +84,9 @@
     float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
     float alcoholPercentageOfWine = 0.13;  // 13% is average
     float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberOfWineGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    float numberOfWhiskeyGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
     
-    return numberOfWineGlassesForEquivalentAlcoholAmount;
+    return numberOfWhiskeyGlassesForEquivalentAlcoholAmount;
 }
 
 @end
