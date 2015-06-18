@@ -122,7 +122,7 @@
                             <outletCollection property="gestureRecognizers" destination="yvC-Gn-u6Z" appends="YES" id="1iU-7o-G2T"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Wine" id="gE9-0O-sPr"/>
+                    <tabBarItem key="tabBarItem" title="Wine" image="wine" id="gE9-0O-sPr"/>
                     <navigationItem key="navigationItem" title="Wine" id="13M-3M-hA8"/>
                     <connections>
                         <outlet property="beerCountSlider" destination="gqO-c4-2rq" id="u2i-xy-5aI"/>
@@ -233,7 +233,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Whiskey" id="S3X-ng-As7"/>
+                    <tabBarItem key="tabBarItem" title="Whiskey" image="whiskey" id="S3X-ng-As7"/>
                     <navigationItem key="navigationItem" title="Whiskey" id="E26-9V-txr"/>
                     <connections>
                         <outlet property="beerCountSlider" destination="4hF-af-4bU" id="9Id-bW-PyV"/>
@@ -247,4 +247,8 @@
             <point key="canvasLocation" x="2063" y="-39"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="whiskey" width="25" height="25"/>
+        <image name="wine" width="25" height="25"/>
+    </resources>
 </document>
