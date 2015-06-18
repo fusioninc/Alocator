@@ -16,12 +16,7 @@
 
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
-        
-    //Whiskey (2 glasses)
-    int numberOfWhiskey = self.beerCountSlider.value;
-    float numberOfWhiskeyGlassesForEquivalentAlcoholAmount = [self calculateGlassesOfWhiskey:numberOfWhiskey alcoholByVolume:[self.whiskeyPercentTextField.text floatValue]];
-    NSString *titleStringWhiskey = [NSString stringWithFormat:(@"Whiskey (%.1f glasses)"),numberOfWhiskeyGlassesForEquivalentAlcoholAmount];
-    self.title = titleStringWhiskey;
+    
     [self.whiskeyPercentTextField resignFirstResponder];
 }
 
@@ -49,6 +44,8 @@
     }
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, [self.whiskeyPercentTextField.text floatValue], numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
+    
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) [self calculateGlassesOfWhiskey:numberOfBeers alcoholByVolume:[self.beerPercentTextField.text floatValue]]]];
 }
 
 
